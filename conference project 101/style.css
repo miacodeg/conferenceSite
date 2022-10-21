@@ -1,0 +1,164 @@
+:root {
+    --cont-bg-color: #333;
+    --left-bg-color: rgba(51, 122, 39, 0.7);
+    --left-bt-hover-color: rgba(70, 85, 80, 0.3);
+    --right-bg-color: rgba(89, 102, 98, 0.8);
+    --right-bt-hover-color: rgba(52, 154, 84, 0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+  }
+  
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  form {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .mb-3 {
+    font-size: 1.2rem;
+  }
+  #email {
+    width: 300px;
+  }
+  .bt {
+    padding: 30px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    height: 2.5rem;
+    padding-top: 1.3rem;
+    width: 15rem;
+    text-align: center;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translateX(-50%);
+  }
+  .sp.left .bt:hover {
+    background-color: var(--left-bt-hover-color);
+    border-color: var(--left-bt-hover-color);
+    color: #fff;
+    text-decoration: none;
+  }
+  .sp.right .bt:hover {
+    background-color: var(--right-bt-hover-color);
+    border-color: var(--right-bt-hover-color);
+    color: #fff;
+    text-decoration: none;
+  }
+  .cont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--cont-bg-color);
+  }
+  .sp {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .sp.left {
+    left: 0;
+    background: url("img/login.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  .sp.left:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--left-bg-color);
+  }
+  .sp.right {
+    right: 0;
+    background: url("img/coding.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  .sp.right:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--right-bg-color);
+  }
+  
+  .sp.left,
+  .sp.right,
+  .sp.right:before,
+  .sp.left:before {
+    transition: var(--speed) all ease-in-out;
+  }
+  .hover-left .left {
+    width: var(--hover-width);
+  }
+  .hover-left .right {
+    width: var(--other-width);
+  }
+  .hover-left .right:before {
+    z-index: 2;
+  }
+  
+  .hover-right .right {
+    width: var(--hover-width);
+  }
+  .hover-right .left {
+    width: var(--other-width);
+  }
+  .hover-right .left:before {
+    z-index: 2;
+  }
+  
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 2rem;
+    }
+    .bt {
+      width: 12rem;
+    }
+  }
+  @media (max-height: 700px) {
+    .bt {
+      top: 98% !important;
+    }
+  
+    @media (max-height: 600px) {
+      .bt {
+        top: 88% !important;
+      }
+      .mb-3 {
+        margin-bottom: 3px !important;
+      }
+    }
+  }
